@@ -8,7 +8,7 @@ export function makeServer({ environment = "development" } = {}) {
     },
 
     seeds(server) {
-      // CEO
+    
       server.create("employee", {
         id: "1",
         name: "Michelle Hill",
@@ -20,7 +20,6 @@ export function makeServer({ environment = "development" } = {}) {
         image: "/images/mark-hill.jpg",
       });
 
-      // Managers (reporting to CEO)
       server.create("employee", {
         id: "2",
         name: "Joe Linux",
@@ -52,7 +51,6 @@ export function makeServer({ environment = "development" } = {}) {
         image: "/images/john-doe.jpg",
       });
 
-      // Employees under CTO
       server.create("employee", {
         id: "5",
         name: "Owen Hunt",
@@ -74,7 +72,7 @@ export function makeServer({ environment = "development" } = {}) {
         image: "/images/bob-smith.jpg",
       });
 
-      // Employees under CFO
+      
       server.create("employee", {
         id: "7",
         name: "Charlie Johnson",
@@ -96,7 +94,6 @@ export function makeServer({ environment = "development" } = {}) {
         image: "/images/diana-prince.jpg",
       });
 
-      // Employees under COO
       server.create("employee", {
         id: "9",
         name: "Ethan Hunt",
@@ -122,12 +119,10 @@ export function makeServer({ environment = "development" } = {}) {
     routes() {
       this.namespace = "api";
 
-      // GET endpoint to fetch all employees
       this.get("/employees", (schema) => {
         return schema.employees.all();
       });
 
-      // PUT endpoint to update an employee (e.g., change manager)
       this.put("/employees/:id", (schema, request) => {
         let id = request.params.id;
         let attrs = JSON.parse(request.requestBody);

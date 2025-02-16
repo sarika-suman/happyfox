@@ -6,11 +6,11 @@ import OrgChart from "./OrgChart";
 function App() {
   return (
     <Box sx={{ display: "flex", height: "100vh", overflow: "hidden" }}>
-      {/* Left Panel: Employee List */}
+      
       <Paper
         elevation={3}
         sx={{
-          width: "370px", // Fixed width for left panel
+          width: "370px", 
           borderRight: "1px solid #ccc",
           height: "100vh",
           overflowY: "auto",
@@ -22,7 +22,7 @@ function App() {
         <EmployeeList />
       </Paper>
 
-      {/* Right Panel: Organization Chart with Centered Header */}
+     
       <Box
         sx={{
           flex: 1,
@@ -32,7 +32,7 @@ function App() {
           backgroundColor: "#f8fafc",
         }}
       >
-        {/* Organization Chart Header */}
+       
         <Box
           sx={{
             textAlign: "center",
@@ -50,7 +50,7 @@ function App() {
           </Typography>
         </Box>
 
-        {/* OrgChart Component */}
+       
         <Box sx={{ flex: 1, position: "relative", overflow: "hidden", p: 2 }}>
           <OrgChart />
         </Box>

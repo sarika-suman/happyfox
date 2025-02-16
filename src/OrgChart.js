@@ -6,20 +6,20 @@ import dagre from "dagre";
 import "reactflow/dist/style.css";
 import "./OrgChart.css";
 
-// Node dimensions
+
 const nodeWidth = 280;
 const nodeHeight = 120;
 
-// Dagre layout function
+
 const getLayoutedElements = (nodes, edges) => {
   const dagreGraph = new dagre.graphlib.Graph();
   dagreGraph.setDefaultEdgeLabel(() => ({}));
 
   dagreGraph.setGraph({
-    rankdir: "TB", // "TB" = Top-to-Bottom
-    ranksep: 150,  // ⬆️ Increased spacing between hierarchy levels
-    nodesep: 30,   // ⬇️ Reduced spacing between employees under the same manager
-    ranker: "network-simplex", // ⬆️ Ensures better vertical alignment
+    rankdir: "TB",
+    ranksep: 150, 
+    nodesep: 30,   
+    ranker: "network-simplex", 
   });
 
   nodes.forEach((node) => {
@@ -56,7 +56,7 @@ const OrgChartComponent = () => {
   const [edges, setEdges] = useState([]);
   const [draggingId, setDraggingId] = useState(null);
 
-  // Fetch employee data
+  
   useEffect(() => {
     fetch("/api/employees")
       .then((res) => res.json())
@@ -106,7 +106,7 @@ const OrgChartComponent = () => {
     [nodes, project]
   );
 
-  // Build nodes & edges from employees
+  
   useEffect(() => {
     if (employees.length === 0) return;
 
@@ -156,7 +156,7 @@ const OrgChartComponent = () => {
     setEdges(layoutedEdges);
   }, [employees, draggingId]);
 
-  // Fit the view when nodes update
+  
   useEffect(() => {
     if (nodes.length > 0) {
       setTimeout(() => {
@@ -181,7 +181,7 @@ const OrgChartComponent = () => {
         style: { stroke: "#CBD5E0", strokeWidth: 2 },
       }}
     >
-      {/* ❌ Removed MiniMap */}
+     
       
       <Controls
         style={{

@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 
-// Initialize MirageJS
 if (process.env.NODE_ENV === "development") {
   makeServer({ environment: "development" });
 }

@@ -13,7 +13,7 @@
   }
   
   .sidebar {
-    width: 280px;         /* Reduced width for left panel */
+    width: 280px;       
     height: 100vh;
     background: #fff;
     border-right: 1px solid var(--border);
@@ -67,7 +67,7 @@
     font-size: 14px;
     color: var(--text-primary);
     appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,..."); /* ensure proper data URI */
+    background-image: url("data:image/svg+xml;charset=UTF-8,..."); 
     background-repeat: no-repeat;
     background-position: right 8px center;
     background-size: 14px;
